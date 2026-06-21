@@ -50,7 +50,7 @@ st.markdown("""
 
 @st.cache_resource
 def load_model():
-    model_path = "model/rf_model.pkl"
+    model_path = "rf_model.pkl"
     if not os.path.exists(model_path):
         st.error("❌ File model tidak ditemukan. Pastikan `model/rf_model.pkl` sudah ada.")
         st.stop()
