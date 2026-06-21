@@ -54,7 +54,8 @@ def load_model():
     if not os.path.exists(model_path):
         st.error("❌ File model tidak ditemukan. Pastikan `model/rf_model.pkl` sudah ada.")
         st.stop()
-    with open(model_path, "rb") as f:
+    import gzip
+    with gzip.open(model_path, 'rb') as f:
         return pickle.load(f)
 
 rf = load_model()
